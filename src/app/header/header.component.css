@@ -1,0 +1,13 @@
+.filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 10px;
+ }
+ a{
+     text-decoration: none;
+     color:white;
+}
+.products:hover{
+cursor: pointer;
+}

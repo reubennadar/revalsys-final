@@ -1,0 +1,42 @@
+<!-- <form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput  type='text'name="username" [(ngModel)]="user.username" required #username='ngModel'>
+        <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput  type="password"name="password" [(ngModel)]="user.password" #password='ngModel'required>
+        <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary"[disabled]="loginForm.form.invalid"  >Login</button>
+</form> -->
+
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form novalidate #loginForm="ngForm"  (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field >
+      <input type="text" matInput name="username" placeholder="Username" [(ngModel)]="user.username" #username='ngModel' required>
+      <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field >
+      <input matInput  type="password" name="password" placeholder="password" [(ngModel)]="user.password" #password='ngModel'required>
+      <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+    </mat-form-field>
+  </p>
+
+  
+
+  <div class="button">
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.form.invalid">Login</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
