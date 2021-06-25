@@ -44,6 +44,7 @@ export class ProductComponent implements OnInit {
        ele.ImagesList =[];
        console.log('ele',ele,ele.Images.split('|'));
        let list = ele.Images.split('|');
+       
        list.forEach((img: any)=>{
          
          ele.ImagesList.push(

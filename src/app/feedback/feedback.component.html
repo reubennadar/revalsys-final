@@ -6,7 +6,7 @@
       <!-- <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p> -->
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="name" placeholder="Name" type="text" required>
+          <input matInput formControlName="name" placeholder="Name" type="text" required pattern="[a-z]*">
           <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
 
         </mat-form-field>
@@ -15,12 +15,12 @@
       <p>
        
         <mat-form-field class="half-width">
-          <input matInput formControlName="email" placeholder="Email" type="email" email required>
+          <input matInput formControlName="email" placeholder="Email" type="email" email  pattern="[a-z]*[@][a-z]*[.][a-z]*"required>
           <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
 
         </mat-form-field>
         <mat-form-field class="half-width">
-            <input matInput formControlName="phone" placeholder="Phone" type="tel" pattern="[0-9]*" required>
+            <input matInput formControlName="phone" placeholder="Phone" type="tel" pattern="[6-9][0-9]*" required>
             <mat-error *ngIf="formErrors.phone">{{formErrors.phone}}</mat-error>
   
           </mat-form-field>

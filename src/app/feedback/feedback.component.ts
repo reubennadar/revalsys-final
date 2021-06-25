@@ -26,16 +26,20 @@ export class FeedbackComponent implements OnInit {
   validationMessages={
     'name':{
       'required':'Name is required',
-      'minlength':     'First Name must be at least 2 characters long.',
-      'maxlength':     'FirstName cannot be more than 25 characters long.'
+      'minlength':     ' Name must be at least 2 characters long.',
+      'maxlength':     'Name cannot be more than 25 characters long.',
+      'pattern':'Name should not contain numbers '
     },
     'email':{
       'required':      'Email is required.',
-      'email':         'Email not in valid format.'
+      'email':         'Email not in valid format.',
+      'pattern': 'Email should be like ex: test@test.test.'
     },
     'phone':{
       'required':      'Tel. number is required.',
-      'pattern':       'Tel. number must contain only numbers.'
+      'pattern':       'Tel. number must be in proper format.',
+      
+      'maxlength':     'Phone number cannot be more than 10 digits long.',
     },
     'message':{
       'required':'Message is required',
@@ -45,9 +49,9 @@ export class FeedbackComponent implements OnInit {
   };
   createForm(){
     this.feedbackForm=this.fb.group({
-      name:['',[Validators.required,Validators.minLength(2),Validators.maxLength(13)]],
-      email:['',[Validators.required,Validators.email]],
-      phone:['',[Validators.required,Validators.pattern]],
+      name:['',[Validators.required,Validators.minLength(2),Validators.maxLength(13)],Validators.pattern],
+      email:['',[Validators.required,Validators.email,Validators.pattern]],
+      phone:['',[Validators.required,Validators.pattern,Validators.maxLength(10)]],
       message:['',[Validators.required]]
     });
     this.feedbackForm.valueChanges

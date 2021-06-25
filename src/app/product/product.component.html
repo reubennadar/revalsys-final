@@ -28,7 +28,7 @@
               (mouseout)="over[i] = false">
       </div> -->
       
-      <img  *ngIf="product.ImagesList" mat-card-image  src="{{product.ListImagePath+ product.img}}"  alt="Photo of a Shiba Inu"  (hover)="toggleImg(i)" (mouseenter)="toggleImg(i)" 
+      <img  *ngIf="product.ImagesList" mat-card-image  src="{{product.ListImagePath+ product.img}}"  alt="Photo of a Shiba Inu"  (mouseenter)="toggleImg(i)" 
       >
       <mat-card-content>
           
